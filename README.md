@@ -1,2 +1,3 @@
-# Smart-School-Management-System-SSMS-
-A full-stack Java-based school management system with role-based access for admins, teachers, students, and parents. Features include student info management, attendance tracking, performance analytics, and secure login. Built with Spring Boot, JPA, PostgreSQL, and Spring Security.
+The Smart School Management System is a full-stack Java-based web application designed to streamline and digitalize school operations, providing a centralized platform for managing students, teachers, parents, and administrators. The system empowers schools with real-time access to student performance, attendance tracking, role-based access control, and efficient communication.
+
+Built using Java, Spring Boot, and PostgreSQL, SSMS integrates modern software development practices such as layered architecture, RESTful API design, security with Spring Security, input validation, and testing with JUnit and Mockito. It features both administrative and academic modules, offering a robust and scalable platform for modern educational institutions.
