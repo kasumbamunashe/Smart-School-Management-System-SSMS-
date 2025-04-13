@@ -28,4 +28,18 @@ public class UserController {
     public ResponseEntity <Page<User>> getAllUsers(@PageableDefault Pageable pageable) {
         return ResponseEntity.ok(userService.getAllUsers(pageable));
     }
+    @GetMapping("/{id}")
+    public ResponseEntity <User> getUserById( @PathVariable Long id) {
+        return ResponseEntity.ok(userService.findUserById(id));
+    }
+    @PutMapping("/{userId}")
+    public ResponseEntity <User> updateUser(@PathVariable Long userId, @RequestBody UserRequest request) {
+        return ResponseEntity.ok(userService.updateUser(userId, request));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity <String> deleteUser(@PathVariable Long id) {
+       userService.deleteUser(id);
+        return ResponseEntity.ok("User deleted");
+    }
+
 }

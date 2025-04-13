@@ -1,6 +1,6 @@
 package com.zw.jimfish.Smart.School.Management.System.SSMS.model.classes;
 
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Audit;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Audit;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

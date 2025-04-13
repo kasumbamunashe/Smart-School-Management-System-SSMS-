@@ -5,8 +5,8 @@ import com.zw.jimfish.Smart.School.Management.System.SSMS.model.classes.ClassSec
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.student.Student;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.subject.Subject;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.teacher.Teacher;
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.AttendanceStatus;
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Audit;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.AttendanceStatus;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Audit;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

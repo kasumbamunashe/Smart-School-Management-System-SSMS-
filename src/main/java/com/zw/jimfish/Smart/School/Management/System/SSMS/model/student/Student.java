@@ -7,9 +7,10 @@ import com.zw.jimfish.Smart.School.Management.System.SSMS.model.classes.ClassSec
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.grade.Grade;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.parent.Parent;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.user.User;
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Audit;
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Gender;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Audit;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Gender;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -35,6 +36,12 @@ public class Student {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
+
+    @Email
+    @NotBlank
+    @Size(max = 100)
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @NotBlank
     @Size(max = 50)

@@ -1,4 +1,4 @@
-package com.zw.jimfish.Smart.School.Management.System.SSMS.utilities;
+package com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Embeddable;

@@ -1,8 +1,6 @@
 package com.zw.jimfish.Smart.School.Management.System.SSMS.model.user;
 
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Role;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

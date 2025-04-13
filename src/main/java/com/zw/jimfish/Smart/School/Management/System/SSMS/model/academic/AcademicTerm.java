@@ -1,7 +1,7 @@
 package com.zw.jimfish.Smart.School.Management.System.SSMS.model.academic;
 
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.Audit;
-import com.zw.jimfish.Smart.School.Management.System.SSMS.utilities.TermType;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Audit;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.TermType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

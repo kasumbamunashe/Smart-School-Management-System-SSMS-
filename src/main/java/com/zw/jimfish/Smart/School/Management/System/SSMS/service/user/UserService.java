@@ -10,7 +10,11 @@ import java.util.Optional;
 public interface UserService {
 
     User createUser(UserRequest request);
-    Optional<User> findUserByEmail(String email);
+
     Page<User>getAllUsers(Pageable pageable);
-    Optional<User> findUserById(Long id);
+
+    User findUserById(Long id);
+
+    User updateUser(Long id, UserRequest request);
+    void deleteUser(Long id);
 }
