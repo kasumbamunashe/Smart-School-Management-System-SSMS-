@@ -21,18 +21,17 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class StudentRequest {
+    private String email;
     private String firstName;
     private String lastName;
-    private String email;
-    private String phone;
     private Gender gender;
+    private String address;
     private String nextOfKin;
+    private String nextOfKinPhoneNumber;
     private String nextOfKinAddress;
     private String nextOfKinEmail;
-    private Grade grade;
-    private List<AssessmentMark> assessmentMarks;
-    private List<AttendanceRecord> attendanceRecords;
-    private List<Parent> parents;
-    private AcademicClass academicClass;
-    private ClassSection classSection;
+    private Long gradeId;
+    private Long academicClassId;
+    private Long classSectionId;
+    private Boolean active;
 }

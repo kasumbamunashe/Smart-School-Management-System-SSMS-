@@ -10,7 +10,9 @@ import java.util.List;
 public interface StudentService {
 
     Student addStudent(StudentRequest request);
-    Student updateStudent(StudentRequest request);
+
+    Student updateStudent(Long studentId, StudentRequest request);
+
     Student deleteStudent(Long id);
     Student getStudent(Long id);
     Page<Student> getStudents(String searchParam,Pageable pageable);
