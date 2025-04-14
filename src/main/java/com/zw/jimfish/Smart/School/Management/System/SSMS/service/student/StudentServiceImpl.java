@@ -74,7 +74,6 @@ public class StudentServiceImpl implements StudentService {
                 .role(Role.STUDENT)
                 .build();
 
-
         Student student = Student.builder()
                 .user(user)
                 .email(request.getEmail())
@@ -102,8 +101,6 @@ public class StudentServiceImpl implements StudentService {
         Pattern pattern = Pattern.compile(emailRegex);
         return pattern.matcher(email).matches();
     }
-
-
 
     @Override
     public Student updateStudent(Long studentId, StudentRequest request) {
@@ -145,7 +142,6 @@ public class StudentServiceImpl implements StudentService {
             student.setClassSection(classSection);
         }
 
-        // Update grade if provided
         if (request.getGradeId() != null) {
             Grade grade = gradeRepository.findById(request.getGradeId())
                     .orElseThrow(() -> new ResourceNotFoundException(
@@ -163,21 +159,24 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student deleteStudent(Long id) {
-        return null;
+        Student student = getById(id);
+        student.setActive(false);
+        return studentRepository.save(student);
     }
 
-    @Override
-    public Student getStudent(Long id) {
-        return null;
-    }
 
     @Override
     public Page<Student> getStudents(String searchParam, Pageable pageable) {
-        return null;
+        if (searchParam != null && !searchParam.isEmpty()) {
+            return studentRepository.findByFirstNameContainingIgnoreCaseOrLastNameContaining(searchParam, searchParam, pageable);
+        } else {
+            return studentRepository.findAll(pageable);
+        }
     }
 
     @Override
     public Student getById(Long id) {
-        return null;
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
     }
 }

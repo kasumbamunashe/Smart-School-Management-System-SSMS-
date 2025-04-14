@@ -30,7 +30,8 @@ public class SecurityConfig {
             "/swagger-ui/**",
             // Your existing auth endpoint
             "/api/auth/**",
-            "/User/**"
+            "/User/**",
+            "/Student/**"
     };
 
     @Bean

@@ -14,7 +14,7 @@ public interface StudentService {
     Student updateStudent(Long studentId, StudentRequest request);
 
     Student deleteStudent(Long id);
-    Student getStudent(Long id);
+
     Page<Student> getStudents(String searchParam,Pageable pageable);
     Student getById(Long id);
 }
