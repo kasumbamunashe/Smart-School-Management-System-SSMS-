@@ -24,7 +24,6 @@ public class StudentController {
                                                         Pageable pageable) {
 
         return ResponseEntity.ok(studentService.getStudents(searchParam,pageable));
-
     }
     @PostMapping("/add")
     public ResponseEntity<Student> addStudent(@RequestBody StudentRequest request) {
@@ -44,6 +43,5 @@ public class StudentController {
     public ResponseEntity<Student> deleteStudent(@PathVariable Long studentId) {
         return ResponseEntity.ok(studentService.deleteStudent(studentId));
     }
-
 
 }

@@ -4,6 +4,7 @@ import com.zw.jimfish.Smart.School.Management.System.SSMS.model.assessment.Asses
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.attendance.AttendanceRecord;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.classes.ClassSection;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.grade.Grade;
+import com.zw.jimfish.Smart.School.Management.System.SSMS.model.subject.Subject;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.timetable.TimetableEntry;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.user.User;
 import com.zw.jimfish.Smart.School.Management.System.SSMS.model.utilities.Audit;
@@ -59,10 +60,13 @@ public class Teacher {
     @Size(max = 20)
     private String nextOfKinPhoneNumber;
 
-    @ElementCollection
-    @CollectionTable(name = "teacher_subjects", joinColumns = @JoinColumn(name = "teacher_id"))
-    @Column(name = "subject")
-    private Set<String> subjects;
+    @ManyToMany
+    @JoinTable(
+            name = "student_subjects",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id")
+    )
+    private Set<Subject> subjects;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -86,6 +90,7 @@ public class Teacher {
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AttendanceRecord> attendanceRecords;
+
 
     @Column(nullable = false)
     private boolean active = true;

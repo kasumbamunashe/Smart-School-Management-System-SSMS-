@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,9 +38,9 @@ public class UserController {
         return ResponseEntity.ok(userService.updateUser(userId, request));
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity <String> deleteUser(@PathVariable Long id) {
+    public ResponseEntity <Void> deleteUser(@PathVariable Long id) {
        userService.deleteUser(id);
-        return ResponseEntity.ok("User deleted");
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
